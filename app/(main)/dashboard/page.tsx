@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { DollarSign, FileText, HardHat, PlusCircle, Ticket, Truck } from "lucide-react"
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, XAxis, YAxis } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
+import Link from "next/link"
 
 const kpiData = [
   { title: "Cotizaciones Hoy", value: "3", icon: FileText, color: "text-sky-500" },
@@ -35,17 +36,25 @@ export default function DashboardPage() {
       <div className="flex flex-wrap items-center justify-between gap-4">
         <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
         <div className="flex flex-wrap items-center gap-2">
-          <Button>
-            <PlusCircle className="mr-2 h-4 w-4" /> Nueva Cotización
+          <Button asChild>
+            <Link href="/cotizaciones">
+              <PlusCircle className="mr-2 h-4 w-4" /> Nueva Cotización
+            </Link>
           </Button>
-          <Button variant="secondary">
-            <FileText className="mr-2 h-4 w-4" /> Facturar
+          <Button asChild variant="secondary">
+            <Link href="/facturacion">
+              <FileText className="mr-2 h-4 w-4" /> Facturar
+            </Link>
           </Button>
-          <Button variant="secondary">
-            <Truck className="mr-2 h-4 w-4" /> Planificar Equipo
+          <Button asChild variant="secondary">
+            <Link href="/equipos">
+              <Truck className="mr-2 h-4 w-4" /> Planificar Equipo
+            </Link>
           </Button>
-          <Button variant="outline">
-            <Ticket className="mr-2 h-4 w-4" /> Nuevo Ticket
+          <Button asChild variant="outline">
+            <Link href="/tickets">
+              <Ticket className="mr-2 h-4 w-4" /> Nuevo Ticket
+            </Link>
           </Button>
         </div>
       </div>
