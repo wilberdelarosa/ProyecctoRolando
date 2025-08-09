@@ -33,3 +33,33 @@ export interface QuoteItem {
   price: number
   isTaxed: boolean
 }
+
+export interface Invoice {
+  id?: number
+  ncf: string
+  clientId: number
+  total: number
+  createdAt: Date
+  updatedAt: Date
+}
+
+export interface EquipmentPlan {
+  id?: number
+  equipment: string
+  date: string
+  shift: string
+  jobSite: string
+  createdAt: Date
+  updatedAt: Date
+}
+
+export interface Ticket {
+  id?: number
+  channel: string
+  subject: string
+  priority: string
+  status: string
+  description: string
+  createdAt: Date
+  updatedAt: Date
+}

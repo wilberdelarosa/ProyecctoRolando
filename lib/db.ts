@@ -1,7 +1,7 @@
 "use client"
 
 import Dexie, { type Table } from "dexie"
-import type { Client, Quote, QuoteItem } from "./types"
+import type { Client, Quote, QuoteItem, Invoice, EquipmentPlan, Ticket } from "./types"
 
 const sampleClients: Omit<Client, "id">[] = [
   {
@@ -37,13 +37,19 @@ export class AlitoDexie extends Dexie {
   clients!: Table<Client, number>
   quotes!: Table<Quote, number>
   quoteItems!: Table<QuoteItem, number>
+  invoices!: Table<Invoice, number>
+  equipmentPlans!: Table<EquipmentPlan, number>
+  tickets!: Table<Ticket, number>
 
   constructor() {
     super("AlitoGroupSGI_DB_v2")
-    this.version(1).stores({
+    this.version(2).stores({
       clients: "++id, name, rnc",
       quotes: "++id, folio, clientId, status",
       quoteItems: "++id, quoteId",
+      invoices: "++id, ncf, clientId",
+      equipmentPlans: "++id, equipment, date, shift",
+      tickets: "++id, channel, status",
     })
   }
 }
