@@ -32,9 +32,9 @@ const monthlyRevenueData = [
 export default function DashboardPage() {
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex items-center justify-between space-y-2">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
-        <div className="flex items-center space-x-2">
+        <div className="flex flex-wrap items-center gap-2">
           <Button>
             <PlusCircle className="mr-2 h-4 w-4" /> Nueva Cotización
           </Button>

@@ -77,10 +77,6 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      // Custom CSS variables for chart colors
-      variables: {
-        "--color-brand": "#f4c542",
-      },
     },
   },
   plugins: [require("tailwindcss-animate")],

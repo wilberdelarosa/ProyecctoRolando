@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Home, PanelLeft, Settings, Truck, Users, FileText, BarChart2, Ticket } from "lucide-react"
 import Link from "next/link"
 import { ModeToggle } from "./mode-toggle"
-import { useSidebar } from "./sidebar/sidebar-provider"
 
 const navItems = [
   { href: "/dashboard", icon: Home, label: "Dashboard" },
@@ -19,8 +18,6 @@ const navItems = [
 ]
 
 export function Header() {
-  const { toggleSidebar } = useSidebar()
-
   return (
     <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
       <Sheet>
@@ -33,7 +30,7 @@ export function Header() {
         <SheetContent side="left" className="sm:max-w-xs">
           <nav className="grid gap-6 text-lg font-medium">
             <Link
-              href="#"
+              href="/dashboard"
               className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-brand text-lg font-semibold text-white md:text-base"
             >
               <Truck className="h-5 w-5 transition-all group-hover:scale-110" />
@@ -52,7 +49,7 @@ export function Header() {
           </nav>
         </SheetContent>
       </Sheet>
-      <div className="relative ml-auto flex-1 md:grow-0">{/* Could be a global search */}</div>
+      <div className="relative ml-auto flex-1 md:grow-0" />
       <ModeToggle />
     </header>
   )

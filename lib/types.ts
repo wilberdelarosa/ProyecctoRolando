@@ -5,8 +5,8 @@ export interface Client {
   email: string
   phone: string
   address: string
-  createdAt?: Date
-  updatedAt?: Date
+  createdAt: Date
+  updatedAt: Date
 }
 
 export interface Quote {
@@ -20,8 +20,8 @@ export interface Quote {
   totalTaxed: number
   itbis: number
   total: number
-  createdAt?: Date
-  updatedAt?: Date
+  createdAt: Date
+  updatedAt: Date
 }
 
 export interface QuoteItem {
@@ -33,5 +33,3 @@ export interface QuoteItem {
   price: number
   isTaxed: boolean
 }
-
-// Define other interfaces as needed: Report, ReportItem, Invoice, etc.
